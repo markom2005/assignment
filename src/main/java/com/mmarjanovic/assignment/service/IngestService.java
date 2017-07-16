@@ -39,9 +39,9 @@ public class IngestService {
 
         // resolve number of lines and text height
         AffineTransform transform = getFont().getTransform();
-        FontRenderContext frc2 = new FontRenderContext(transform, true, true);
-        int textWidth = (int)(getFont().getStringBounds(text, frc2).getWidth());
-        int textHeight = (int)(getFont().getStringBounds(text, frc2).getHeight());
+        FontRenderContext fontRenderContext = new FontRenderContext(transform, true, true);
+        int textWidth = (int)(getFont().getStringBounds(text, fontRenderContext).getWidth());
+        int textHeight = (int)(getFont().getStringBounds(text, fontRenderContext).getHeight());
 
         int numberOfLines = textWidth / Constants.IMAGE_MAX_WIDTH_IN_PX;
         numberOfLines += (textWidth % Constants.IMAGE_MAX_WIDTH_IN_PX > Constants.IMAGE_MAX_WIDTH_IN_PX / 2) ? 1 : 0;
@@ -71,8 +71,8 @@ public class IngestService {
         AttributedCharacterIterator paragraph = attributedText.getIterator();
         int startIndex = paragraph.getBeginIndex();
         int endIndex = paragraph.getEndIndex();
-        FontRenderContext frc = graphics.getFontRenderContext();
-        LineBreakMeasurer lineMeasurer = new LineBreakMeasurer(paragraph, frc);
+        fontRenderContext = graphics.getFontRenderContext();
+        LineBreakMeasurer lineMeasurer = new LineBreakMeasurer(paragraph, fontRenderContext);
 
         float maxWidthInPx = Constants.IMAGE_MAX_WIDTH_IN_PX;
         float drawPosY = 0;
