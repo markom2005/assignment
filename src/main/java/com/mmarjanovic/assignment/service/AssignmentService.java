@@ -18,10 +18,10 @@ public class AssignmentService {
     private RestTemplate restTemplate = new RestTemplate();
 
     public List<Assignment> getAssignments() {
-        return fetchAssignmentsRestTemplate();
+        return fetchAssignments();
     }
 
-    private List<Assignment> fetchAssignmentsRestTemplate() {
+    private List<Assignment> fetchAssignments() {
         List<Assignment> assignmentsList = null;
 
         HttpHeaders headers = new HttpHeaders();
