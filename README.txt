@@ -1,4 +1,4 @@
-This simple webapp is created using Spring Boot. It runs using Jetty on port 8080.
+This simple webapp is created using Java, Spring Boot and Gradle. It runs using Jetty on port 8080.
 
 Instructions:
 1) Clone the project from GitHub and open it in you favourite IDE (for example IntelliJ IDEA).
